@@ -1,39 +1,25 @@
 import React from 'react';
 import './App.css';
-import {Layout,Header,Navigation,Drawer,Content} from 'react-mdl';
-import Main from './Components/main';
-import {Link,BrowserRouter} from 'react-router-dom';
+//import {Layout,Header,NavBar,Drawer,Content} from 'react-mdl';
+//import Main from './Components/main';
+//import {Link,BrowserRouter as Router} from 'react-router-dom';
 //import Map from './Map/indexMap.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Nav} from 'react-bootstrap';
+import Navbar from 'react-bootstrap/Navbar'
 
 function App() {
   return (
-    <div style={{height: '300px', position: 'relative'}}>
-    <Layout fixedHeader>
-        <Header title={<span><span style={{ color: '#ddd' }}></span><strong>Parcours Biodiversité</strong></span>}>
-        <BrowserRouter>
-            <Navigation>
-                <Link to="/resume">Resume</Link>
-                <Link to="/aboutme">About me</Link>
-                <Link to="/projects">Projects</Link>
-                <Link to="/contact">Contact</Link>
-            </Navigation>
-        </BrowserRouter>
-        </Header>
-        <Drawer title="Title">
-        <BrowserRouter>
-            <Navigation>
-                <Link to="/resume">Resume</Link>
-                <Link to="/aboutme">About me</Link>
-                <Link to="/projects">Projects</Link>
-                <Link to="/contact">Contact</Link>
-            </Navigation>
-        </BrowserRouter>
-        </Drawer>
-        <Content>
-            <Main />   
-        </Content>
-    </Layout>
-</div>
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar.Brand href="#home">Parcours Biodiversité</Navbar.Brand>
+    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+    <Navbar.Collapse id="responsive-navbar-nav">
+      <Nav className="mr-auto">
+        <Nav.Link href="/">Points d'intérêts</Nav.Link>
+        <Nav.Link href="#pricing">About me</Nav.Link>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
   );
 }
 
