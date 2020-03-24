@@ -11,12 +11,11 @@ function App() {
   return (
     <Router>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="/">Parcours Biodiversité</Navbar.Brand>
+      <Navbar.Brand href="/landingpage">Parcours Biodiversité</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Link to="/PointsofInterest">Points d'intérêts</Link>
-          <Link to="/landingpage">About me</Link>
         </Nav>
        </Navbar.Collapse>
       </Navbar>
