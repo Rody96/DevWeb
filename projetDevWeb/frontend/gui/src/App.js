@@ -1,26 +1,42 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 //import {Layout,Header,NavBar,Drawer,Content} from 'react-mdl';
 //import Main from './Components/main';
 //import {Link,BrowserRouter as Router} from 'react-router-dom';
 //import Map from './Map/indexMap.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Nav} from 'react-bootstrap';
-import Navbar from 'react-bootstrap/Navbar'
+//import {Nav} from 'react-bootstrap';
+//import Navbar from 'react-bootstrap/Navbar'
 
-function App() {
-  return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-    <Navbar.Brand href="#home">Parcours Biodiversité</Navbar.Brand>
-    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-    <Navbar.Collapse id="responsive-navbar-nav">
-      <Nav className="mr-auto">
-        <Nav.Link href="/">Points d'intérêts</Nav.Link>
-        <Nav.Link href="#pricing">About me</Nav.Link>
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-  );
+class App extends Component {
+  state = {
+    items: []
+  };
+
+  async componentDidMount() {
+    try {
+      const res = await fetch('http://127.0.0.1:8000/api/Arbres_Remarquables/');
+      const items = await res.json();
+      this.setState({
+        items
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.items.map(item => (
+          <div key={item.nom_français}>
+            <h1>{item.nom_français}</h1>
+            <span>{item.nom_scientifique}</span>
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
 
 export default App;
