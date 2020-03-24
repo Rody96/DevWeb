@@ -1,19 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import LandingPage from './landingpage';
-import AboutMe from './aboutme';
-import Contact from './contact';
-import Projects from './project';
+import PointsOfInterest from './PointsofInterest'
+
 
 const Main = () => (
-    <Router>
         <Switch>
-            <Route exact path="/" component={LandingPage} />
-            <Route exact path="/aboutme" component={AboutMe} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/project" component={Projects} />
+            <Route exact path="/PointsOfInterest" component={PointsOfInterest} />
+            <Route exact path="/landingpage" component={LandingPage} />
         </Switch>
-   </Router>
 )
 
 export default Main;
