@@ -16,6 +16,7 @@ function App() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Link to="/PointsofInterest">Points d'intérêts</Link>
+          <Link to="/parcoursPersos">Parcours personnalisés</Link>
         </Nav>
        </Navbar.Collapse>
       </Navbar>

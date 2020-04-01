@@ -1,29 +1,17 @@
-import React from 'react';
-import l from 'leaflet'
-import 'leaflet/dist/leaflet.css';
-import styled from 'styled-components';
+import React from "react";
+import { Map, Marker, Popup, TileLayer } from "react-leaflet";
+import "../App.css";
 
-const Wrapper = styled.div`
-    width: ${props => props.width};
-    height:${props => props.height};
-`;
-
-export default class Map extends React.Component{
-    componentDidMount(){
-        this.map = l.map('map',{
-            center:[50.668081,4.6118324],
-            zoom: 15,
-            zoomControl: false
-        });
-        l.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            detectRetina: true,
-            maxZoom: 20,
-            maxNativeZoom: 17,
-        }).addTo(this.map);
-
-    }
-
-    render(){
-        return <Wrapper width="500px" height="500px" id="map" />
-    }
+export default function App() {
+  return (
+    <Map center={[50.666327, 4.605879]} zoom={12}>
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      />
+      <Marker position={[50.666327, 4.605879]}>
+      <Popup>Lac de Louvain-la-neuve</Popup>
+    </Marker>
+    </Map>
+  );
 }

@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'Flore',
     'myapi.apps.MyapiConfig',
     'corsheaders',
     'rest_framework',

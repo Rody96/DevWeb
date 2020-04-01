@@ -20,11 +20,12 @@ class ListofPoints extends Component{
       render() {
         return (
           <div>
+            <h1>Point d'intérêts</h1>
             {this.state.items.map(item => (
-              <div key={item.nom_français}>
-                <h1>{item.nom_français}</h1>
-                <span>{item.nom_scientifique}</span>
-              </div>
+              <dl key={item.nom_français}>
+                <dt>{item.nom_français}</dt>
+                <dd>{item.nom_scientifique}</dd>
+              </dl>
             ))}
           </div>
         );
