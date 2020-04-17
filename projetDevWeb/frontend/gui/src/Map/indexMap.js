@@ -12,6 +12,11 @@ export default function App() {
       <Marker position={[50.666327, 4.605879]}>
       <Popup>Lac de Louvain-la-neuve</Popup>
     </Marker>
+
+    <Marker position={[50.6683333, 4.619444444444445]}>
+      <Popup>Place des Sciences</Popup>
+    </Marker>
+
     </Map>
   );
 }
