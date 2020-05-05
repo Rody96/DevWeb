@@ -5,6 +5,20 @@ import "../App.css";
 
 
 var MyIcon = new Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+  iconSize:[25, 41],
+  iconAnchor:[12.5, 41],
+  popupAnchor: [0, -41],
+})
+
+var lac = new Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+  iconSize:[25, 41],
+  iconAnchor:[12.5, 41],
+  popupAnchor: [0, -41],
+})
+
+var cyclo = new Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
   iconSize:[25, 41],
   iconAnchor:[12.5, 41],
@@ -18,7 +32,7 @@ export default function App() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
-      <Marker position={[50.666327, 4.605879]}>
+      <Marker position={[50.666327, 4.605879]} icon={lac}>
       <Popup>Lac de Louvain-la-neuve</Popup>
     </Marker>
 
@@ -26,7 +40,7 @@ export default function App() {
       <Popup>Place des Sciences</Popup>
     </Marker>
 
-    <Marker position={[50.6655556, 4.62388888888889]}>
+    <Marker position={[50.6655556, 4.62388888888889]} icon={cyclo}>
       <Popup>Cyclotron</Popup>
     </Marker>
 
